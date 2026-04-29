@@ -40,6 +40,7 @@ model = dict(
         channels=32,
         norm_cfg=norm_cfg,
         act_cfg=act_cfg,
+        init_cfg=None,
         num_classes=num_classes,
         loss_detail_weight=1.0,
         in_index=1,
