@@ -21,7 +21,7 @@ conda activate openmmlab
 **Step 2.** 参考 [official instructions](https://pytorch.org/get-started/locally/) 安装 PyTorch
 
 在 GPU 平台上：
-
+推荐torch2.0.0以获取最佳兼容性
 ```shell
 conda install pytorch torchvision -c pytorch
 ```
