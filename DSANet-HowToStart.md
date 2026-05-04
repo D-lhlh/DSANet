@@ -57,7 +57,7 @@ pip install -e .
 ## test：
 打开tools/test.py,从目录中的configs/dsanet/下选择配置文件,再选择对应的权重并运行
 ## checkpoints
-[百度网盘](https://pan.baidu.com/s/1vMV8L0v2ps4McU89bqMaOw?pwd=yq5q)提取码: yq5q
+百度网盘[baidunetdiskLink](https://pan.baidu.com/s/1vMV8L0v2ps4McU89bqMaOw?pwd=yq5q)提取码: yq5q
 
-[谷歌](https://drive.google.com/file/d/1oDCCVvLzEbULaL3tNJ81dPR-LIYJj_ez/view?usp=drive_link)
+谷歌[Googlelink](https://drive.google.com/file/d/1oDCCVvLzEbULaL3tNJ81dPR-LIYJj_ez/view?usp=drive_link)
 
