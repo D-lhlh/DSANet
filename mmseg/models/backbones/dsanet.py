@@ -442,7 +442,7 @@ class DeatilAlignedModule(nn.Module):
         n, c, h, w = input.size()
         # n, c, h, w
         # n, 2, h, w
-        flowvis = FlowFeatureVisualizer()
+        #flowvis = FlowFeatureVisualizer()
         norm = torch.tensor([[[[out_w, out_h]]]]).type_as(input).to(input.device)
         h = torch.linspace(-1.0, 1.0, out_h).view(-1, 1).repeat(1, out_w)
         w = torch.linspace(-1.0, 1.0, out_w).repeat(out_h, 1)
@@ -452,7 +452,7 @@ class DeatilAlignedModule(nn.Module):
         grid = grid + flow.permute(0, 2, 3, 1) / norm
 
         output = F.grid_sample(input, grid, align_corners=True)
-        flowvis.visualize_features(F.interpolate(input, size=size, mode='bilinear'), output, flow, channel_idx=0)
+        #flowvis.visualize_features(F.interpolate(input, size=size, mode='bilinear'), output, flow, channel_idx=0)
         return output
 
 
