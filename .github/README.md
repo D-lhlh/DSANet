@@ -6,7 +6,29 @@
 
 
 ## Performance
+CItyscapes val sets:
 
+| Methods | Size     | Params(M) | Flops(G) | Speed(FPS) | mIoU | logs | checkpoint |
+|---------|----------|-----------|----------|------------|------|------|------------|
+| DSANet  | 512x1024 | 1.17      | 5.39     | 110        | 75.6 |      |            |
+| DSANet  | 768x1536 | 1.17      | 12.13    | 91         | 75.8 |      |            |
+  
+
+CamVid test sets:
+
+| Methods | Size    | Params(M) | Flops(G) | Speed(FPS) | mIoU | logs | checkpoint |
+|---------|---------|-----------|----------|------------|------|------|------------|
+| DSANet  | 576x768 | 1.17      | 4.54     | 116        | 80.2 |      |            |
+| DSANet  | 720x960 | 1.17      | 7.10     | 114        | 80.3 |      |            |
+
+
+BDD100K val sets:
+
+| Methods            | Size     | Params(M) | Flops(G) | Speed(FPS) | mIoU | logs | checkpoint |
+|--------------------|----------|-----------|----------|------------|------|------|------------|
+| DSANet             | 512x1024 | 1.17      | 5.39     | 110        | 52.4 |      |            |
+| DSANet             | 720x1280 | 1.17      | 9.48     | 105        | 54.7 |      |            |
+| DSANet(Cityscapes) | 512x1024 | 1.17      | 5.39     | 110        | 58.3 |      |            |
 ## Envs
 
 通过pip安装mim
