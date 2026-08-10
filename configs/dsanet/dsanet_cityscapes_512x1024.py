@@ -77,7 +77,7 @@ optimizer = dict(type='SGD', lr=0.08, momentum=0.9, weight_decay=0.0001)
 optim_wrapper = dict(type='OptimWrapper', optimizer=optimizer, clip_grad=None)
 # learning policy
 iters = 160000
-warmup_iters = 5000
+warmup_iters = 2000
 param_scheduler = [
     dict(
         type='LinearLR',
@@ -89,7 +89,7 @@ param_scheduler = [
     ),
     dict(
         type='PolyLR',
-        eta_min=1e-4,
+        eta_min=1e-5,
         power=0.9,
         begin=warmup_iters,
         end=iters,
