@@ -10,7 +10,7 @@ crop_size = (720, 1280)
 #                 0.0517
 # ]
 class_weight = None
-ckp = '/root/lanyun-tmp/mmsegmentation-main/checkpoints/bdd100k/city_trainval_160k.pth'
+
 
 num_classes = 19
 norm_cfg = dict(type='BN', requires_grad=True)
@@ -33,11 +33,7 @@ model = dict(
         channels=(16, 32, 64, 128),
         norm_cfg=norm_cfg,
         act_cfg=act_cfg,
-        init_cfg=dict(
-            type='Pretrained',
-            checkpoint=ckp,
-            prefix='backbone.'
-        )
+        init_cfg=None
     ),
     decode_head=dict(
         type='OHEM_HEAD',
@@ -48,11 +44,7 @@ model = dict(
         num_classes=num_classes,
         loss_detail_weight=1.0,
         in_index=1,
-        init_cfg=dict(
-            type='Pretrained',
-            checkpoint=ckp,
-            prefix='decode_head.'
-        ),
+        init_cfg=None,
         loss_decode=[
             dict(
                 type='OhemCrossEntropy',
@@ -83,20 +75,14 @@ model = dict(
 
 
 optimizer = dict(type='SGD', lr=0.06, momentum=0.9, weight_decay=0.0001)
-optim_wrapper = dict(type='OptimWrapper', optimizer=optimizer, clip_grad=None,
-                     paramwise_cfg=dict(
-                         custom_keys={
-                             'backbone': dict(lr_mult=0.1),
-                             'decode_head': dict(lr_mult=1.0),
-                         }
-                     ))
+optim_wrapper = dict(type='OptimWrapper', optimizer=optimizer, clip_grad=None)
 # learning policy
-iters = 120000
+iters = 320000
 warmup_iters = 4000
 param_scheduler = [
     dict(
         type='LinearLR',
-        start_factor=1e-5,
+        start_factor=1e-4,
         end_factor=1.0,
         begin=0,
         end=warmup_iters,
@@ -104,7 +90,7 @@ param_scheduler = [
     ),
     dict(
         type='PolyLR',
-        eta_min=0,
+        eta_min=1e-5,
         power=0.9,
         begin=warmup_iters,
         end=iters,
@@ -162,5 +148,5 @@ default_hooks = dict(
         file_client_args=None,
     ),
     sampler_seed=dict(type='DistSamplerSeedHook'),
-    #visualization=dict(type='SegVisualizationHook')
+    visualization=dict(type='SegVisualizationHook')
 )
