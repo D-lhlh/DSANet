@@ -55,14 +55,14 @@ pip install -e .
 打开tools/train.py,从目录中的configs/dsanet/下选择配置文件并运行
 or
 ```shell
-mim python tools/train.py configs/dsanet/dsanet_cityscapes_512x1024.py
+python tools/train.py configs/dsanet/dsanet_cityscapes_512x1024.py
 ```
 
 ## test：
 打开tools/test.py,从目录中的configs/dsanet/下选择配置文件,再选择对应的权重并运行
 or
 ```shell
-mim python tools/test.py configs/dsanet/dsanet_cityscapes_512x1024.py ckps/checkpoints.pth
+python tools/test.py configs/dsanet/dsanet_cityscapes_512x1024.py ckps/checkpoints.pth
 ```
 ## checkpoints
 
