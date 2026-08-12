@@ -31,6 +31,7 @@ BDD100K val sets:
 | DSANet(Cityscapes) | 512x1024 |   1.17    |   5.39   |    110     | 58.3  | [logs](../tools/work_dirs/dsanet_bdd100k_512x1024/20260728_185849_finetuned/)    |                 [BaiDuDisk](https://pan.baidu.com/s/1RWRFqprvdJ8x5-7gSGoT4g#list/path=%2FDSANet_pth%2FBDD100K&parentPath=%2F)/[google](https://drive.google.com/file/d/1uAX3cj7EX2QHEDNK4sPw20ORoEl3Cj1H/view?usp=drive_link)                  |
 
 ## Envs
+Pytorch==2.0.0, CUDA==11.8
 
 通过pip安装mim
 ```shell
